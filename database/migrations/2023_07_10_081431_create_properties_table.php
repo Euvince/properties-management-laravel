@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('price');
             $table->string('city');
             $table->string('adress');
+            $table->integer('postal_code');
             $table->boolean('sold');
             $table->timestamps();
         });
