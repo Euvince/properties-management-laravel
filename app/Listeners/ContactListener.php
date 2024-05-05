@@ -13,7 +13,7 @@ class ContactListener implements ShouldQueue
     /**
      * Create the event listener.
      */
-    public function __construct(private Mailer $mail)
+    public function __construct(private Mailer $mailer)
     {
 
     }
@@ -23,6 +23,6 @@ class ContactListener implements ShouldQueue
      */
     public function handle(ContactRequestEvent $event): void
     {
-        $this->mail->send(new PropertyContactMail($event->property, $event->data));
+        $this->mailer->send(new PropertyContactMail($event->property, $event->data));
     }
 }

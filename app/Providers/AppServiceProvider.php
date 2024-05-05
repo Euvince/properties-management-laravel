@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Weather;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
@@ -22,5 +23,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Paginator::useBootstrapFive();
+        JsonResource::withoutWrapping();
     }
 }

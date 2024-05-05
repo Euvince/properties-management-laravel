@@ -28,7 +28,7 @@ class PropertyFactory extends Factory
             'city' => $this->faker->city(),
             'adress' => $this->faker->address(),
             'postal_code' => $this->faker->numberBetween(11500, 86900),
-            'sold' => false
+            'sold' => $this->faker->boolean(20)
         ];
     }
 

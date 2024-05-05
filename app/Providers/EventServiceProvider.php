@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Events\ContactRequestEvent;
+use App\Listeners\ContactEventSubscriber;
 use App\Listeners\ContactListener;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -24,6 +25,10 @@ class EventServiceProvider extends ServiceProvider
             ContactListener::class
         ]
     ];
+
+    /* protected $subscribe = [
+        ContactEventSubscriber::class
+    ]; */
 
     /**
      * Register any events for your application.

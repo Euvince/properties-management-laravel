@@ -20,7 +20,6 @@ class ContactRequestEvent
      */
     public function __construct(public Property $property, public array $data)
     {
-        
     }
 
     /**
