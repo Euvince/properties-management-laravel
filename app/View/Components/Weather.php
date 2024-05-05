@@ -12,9 +12,10 @@ class Weather extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(private AppWeather $weather)
+    public function __construct(
+        private readonly AppWeather $weather
+    )
     {
-        //
     }
 
     /**

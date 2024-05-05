@@ -8,7 +8,7 @@
         $type = 'info'
     @endphp
 
-    <x-weather></x-weather>
+   {{--  <x-weather></x-weather> --}}
 
     {{-- <x-alert :type="$type" class="fw-bold">
         Des Informations

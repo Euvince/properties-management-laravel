@@ -8,19 +8,28 @@ use Illuminate\Contracts\View\View;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Admin\PropertyFormRequest;
+use Facades\App\Weather;
+use Illuminate\Auth\AuthManager;
+use Illuminate\Cookie\CookieJar;
 
 class PropertyController extends Controller
 {
 
-   /*  public function __construct()
+    public function __construct()
     {
         $this->authorizeResource(Property::class, 'property');
-    } */
+    }
 
-    public function index(): View
+    public function index(AuthManager $auth, CookieJar $cookieJar): View
     {
+
+        dd(Weather::isSunnyTomorrow());
+
+        /* dd(app(AuthManager::class));
+        dd(app('auth'));
+        dd($auth->user()); */
         return view('admin.properties.index', [
-            'properties' => Property::paginate(3)
+            'properties' => Property::paginate(25)
         ]);
     }
 
@@ -32,7 +41,7 @@ class PropertyController extends Controller
             'price' => '22000000',
             'description' => 'Description d\'essai',
             'adress' => '15 rue de test',
-            'surface' => 40, 
+            'surface' => 40,
             'rooms' => 3,
             'bedrooms' => 2,
             'floor' => 0,

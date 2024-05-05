@@ -10,9 +10,17 @@ use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
-    public function index(Weather $weather): View
+
+    function __construct(
+        private readonly Weather $weather
+    )
     {
-        /* dd($weather); */
+    }
+
+    public function index(/* Weather $weather */): View
+    {
+        /* dd($this->weather); */
+        /* dd(app(Weather::class)); */
         /* $user = User::first();
         $user->password = '0000';
         dd($user->password, $user); */

@@ -5,13 +5,14 @@ namespace App;
 class Weather
 {
 
-    public function __construct(public string $apiKey)
+    function __construct(
+        public readonly string $apiKey
+    )
     {
-
     }
 
-    public function isSunnyTomorrow()
+    function isSunnyTomorrow() : bool|String
     {
-        return true;
+        return $this->apiKey;
     }
 }
