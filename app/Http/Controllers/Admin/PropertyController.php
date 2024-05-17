@@ -22,8 +22,9 @@ class PropertyController extends Controller
 
     public function index(AuthManager $auth, CookieJar $cookieJar): View
     {
-
-        dd(Weather::isSunnyTomorrow());
+        /* dd(request()->session()->get('key'));
+        dd($auth->user());
+        dd(Weather::isSunnyTomorrow()); */
 
         /* dd(app(AuthManager::class));
         dd(app('auth'));
